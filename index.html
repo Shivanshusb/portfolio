@@ -8,182 +8,248 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
+*{margin:0;padding:0;box-sizing:border-box}
 body{
-    font-family:'Inter',sans-serif;
-    background: url('bg.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color:#fff;
+font-family:'Inter',sans-serif;
+background:url('bg.jpg') no-repeat center center fixed;
+background-size:cover;
+color:#fff;
 }
 
 .overlay{
-    background: linear-gradient(to right, rgba(10,15,25,0.95), rgba(10,15,25,0.85));
-    min-height:100vh;
+background:rgba(10,15,25,0.92);
+min-height:100vh;
 }
 
-/* HEADER */
-
-header{
-    padding:20px 8%;
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
 }
-
-header h2{
-    color:#ff7a00;
-    font-weight:800;
-    letter-spacing:1px;
+nav h2{
+color:#ff7a00;
+font-weight:800;
 }
-
-/* HERO SECTION */
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
+nav ul li a{
+color:white;
+text-decoration:none;
+}
+nav ul li a:hover{
+color:#ff7a00;
+}
 
 .hero{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:80px 8%;
-    flex-wrap:wrap;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:80px 8%;
+flex-wrap:wrap;
 }
 
-.hero-text{
-    flex:1;
-    min-width:300px;
-}
-
+.hero-text{flex:1;min-width:280px;}
 .hero-text h1{
-    font-size:42px;
-    line-height:1.3;
-    margin-bottom:25px;
+font-size:42px;
+margin-bottom:20px;
+line-height:1.3;
 }
-
-.highlight{
-    color:#ff7a00;
-}
-
+.highlight{color:#ff7a00}
 .hero-text p{
-    margin-bottom:35px;
-    max-width:520px;
-    color:#ccc;
-    font-size:16px;
+color:#ccc;
+margin-bottom:30px;
+max-width:500px;
 }
-
-/* BUTTONS */
 
 .btn{
-    padding:14px 28px;
-    text-decoration:none;
-    border-radius:8px;
-    margin-right:15px;
-    font-weight:600;
-    transition:0.3s ease;
+padding:14px 28px;
+background:#ff7a00;
+color:black;
+text-decoration:none;
+border-radius:8px;
+font-weight:600;
+transition:0.3s;
+display:inline-block;
+}
+.btn:hover{
+background:#ff9333;
+transform:translateY(-3px);
 }
 
-.primary{
-    background:#ff7a00;
-    color:#000;
-}
-
-.primary:hover{
-    background:#ff9333;
-    transform:translateY(-3px);
-}
-
-.secondary{
-    border:2px solid #ff7a00;
-    color:#ff7a00;
-}
-
-.secondary:hover{
-    background:#ff7a00;
-    color:#000;
-    transform:translateY(-3px);
-}
-
-/* HERO IMAGE */
-
-.hero-img{
-    flex:1;
-    text-align:center;
-    min-width:300px;
-}
-
+.hero-img{flex:1;text-align:center;min-width:280px;}
 .hero-img img{
-    width:100%;
-    max-width:400px;
-    border-radius:20px;
-    box-shadow:0 25px 60px rgba(0,0,0,0.6);
-    transition:0.4s ease;
-    border:3px solid rgba(255,122,0,0.3);
+width:100%;
+max-width:380px;
+border-radius:20px;
+box-shadow:0 25px 60px rgba(0,0,0,0.6);
+border:3px solid rgba(255,122,0,0.4);
+transition:0.4s;
 }
-
 .hero-img img:hover{
-    transform:scale(1.05);
-    box-shadow:0 30px 70px rgba(255,122,0,0.4);
+transform:scale(1.05);
+box-shadow:0 30px 70px rgba(255,122,0,0.4);
 }
 
-/* RESPONSIVE */
+section{padding:80px 8%;}
+.section-title{text-align:center;margin-bottom:50px;}
+.section-title h2{font-size:32px;color:#ff7a00;margin-bottom:10px;}
 
-@media(max-width:992px){
-    .hero{
-        flex-direction:column-reverse;
-        text-align:center;
-    }
-
-    .hero-text h1{
-        font-size:32px;
-    }
-
-    .hero-text p{
-        margin:auto;
-        margin-bottom:30px;
-    }
-
-    .btn{
-        display:inline-block;
-        margin-bottom:15px;
-    }
+.services, .why{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
 }
 
+.card{
+background:rgba(255,255,255,0.05);
+padding:30px;
+border-radius:15px;
+transition:0.3s;
+}
+.card:hover{
+background:rgba(255,122,0,0.1);
+transform:translateY(-5px);
+}
+.card h3{
+margin-bottom:15px;
+color:#ff7a00;
+}
+
+.contact-box{
+text-align:center;
+background:rgba(255,255,255,0.05);
+padding:40px;
+border-radius:15px;
+}
+
+.contact-box p{
+margin:10px 0;
+font-size:18px;
+}
+
+.contact-box a{
+color:#ff7a00;
+text-decoration:none;
+font-weight:600;
+}
+
+footer{
+text-align:center;
+padding:30px;
+background:rgba(0,0,0,0.5);
+color:#aaa;
+}
+
+@media(max-width:900px){
+.hero{
+flex-direction:column-reverse;
+text-align:center;
+}
+.hero-text h1{font-size:30px;}
+nav ul{display:none;}
+}
 </style>
 </head>
 <body>
 
 <div class="overlay">
 
-<header>
-    <h2>Shivanshu Mishra</h2>
-</header>
+<nav>
+<h2>Shivanshu Mishra</h2>
+<ul>
+<li><a href="#services">Services</a></li>
+<li><a href="#security">Security</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
 
 <section class="hero">
-
-    <div class="hero-text">
-        <h1>
-            I Build <span class="highlight">High-Converting & Secure Websites</span><br>
-            For Modern Businesses
-        </h1>
-
-        <p>
-            I'm a Freelance Web Developer & Security-Focused Website Specialist.
-            I create fast, modern, mobile-friendly websites using WordPress,
-            Elementor, Shopify, Joomla & custom HTML — built to attract clients
-            and protect your business.
-        </p>
-
-        <a href="#" class="btn primary">Hire Me</a>
-        <a href="#" class="btn secondary">View Services</a>
-    </div>
-
-    <div class="hero-img">
-        <img src="hero.jpg" alt="Shivanshu Mishra">
-    </div>
-
-</section>
-
+<div class="hero-text">
+<h1>I Build <span class="highlight">Modern & Secure Websites</span> That Convert</h1>
+<p>Freelance Web Developer & CEH Certified Security Professional. I create high-performance, mobile-friendly and secure websites for businesses.</p>
+<a href="#contact" class="btn">Hire Me</a>
 </div>
 
+<div class="hero-img">
+<img src="hero.jpg" alt="Shivanshu Mishra">
+</div>
+</section>
+
+<section id="services">
+<div class="section-title">
+<h2>Website Development Services</h2>
+<p>Platforms & Technologies I Work With</p>
+</div>
+
+<div class="services">
+<div class="card">
+<h3>WordPress & Elementor</h3>
+<p>Custom business websites, landing pages & optimization.</p>
+</div>
+
+<div class="card">
+<h3>Shopify Store Setup</h3>
+<p>Professional eCommerce store setup & customization.</p>
+</div>
+
+<div class="card">
+<h3>Joomla Development</h3>
+<p>CMS-based scalable business solutions.</p>
+</div>
+
+<div class="card">
+<h3>Custom HTML/CSS</h3>
+<p>Fast, lightweight and fully responsive custom-coded websites.</p>
+</div>
+</div>
+</section>
+
+<section id="security">
+<div class="section-title">
+<h2>Security Focused Development</h2>
+<p>CEH Certified | Secure Architecture | Best Practices</p>
+</div>
+
+<div class="why">
+<div class="card">
+<h3>CEH Certified</h3>
+<p>Ethical hacking knowledge applied to secure your website.</p>
+</div>
+
+<div class="card">
+<h3>Secure Hosting Setup</h3>
+<p>SSL, firewall & malware protection implementation.</p>
+</div>
+
+<div class="card">
+<h3>Ongoing Maintenance</h3>
+<p>Monitoring, updates & performance optimization.</p>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="section-title">
+<h2>Contact Me</h2>
+<p>Let's build something amazing together</p>
+</div>
+
+<div class="contact-box">
+<p>Email: <a href="mailto:shivanshusb19@gmail.com">shivanshusb19@gmail.com</a></p>
+<p>Mobile: <a href="tel:8423161111">8423161111</a></p>
+<br>
+<a href="mailto:shivanshusb19@gmail.com" class="btn">Start a Project</a>
+</div>
+</section>
+
+<footer>
+© 2026 Shivanshu Mishra | Freelance Web Developer & Security Specialist
+</footer>
+
+</div>
 </body>
 </html>
